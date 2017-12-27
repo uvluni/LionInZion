@@ -1,142 +1,187 @@
+///// north /////
 
 let golanHeightsandGalilee = {
-  id: '2006',
+  id: '2101',
   title: 'Golan Heights and Galilee'
 };
 
 let tiberias = {
-  id: '2007',
-  title: 'Tiberias'
-};
-
-let beitShean = {
-  id: '2008',
-  title: 'Beit Shean and the area'
+  id: '2102',
+  title: 'Tiberias Beit Shean and the area'
 };
 
 let afula = {
-  id: '2009',
-  title: 'Afula'
-};
-
-let jezreelValley = {
-  id: '2010',
-  title: 'Jezreel Valley'
+  id: '2103',
+  title: 'Afula and Jezreel Valley'
 };
 
 let krayot = {
-  id: '2011',
-  title: "Krayot"
+  id: '2104',
+  title: 'Krayot'
 }
 
 let haifa = {
-  id: "2012",
-  title: "Haifa"
+  id: '2105',
+  title: 'Haifa'
 }
 
 let zikhronYaakov = {
-  id: "2013",
-  title: "Zikhron Yaakov and Pardes Hana-Karkur"
+  id: '2106',
+  title: 'Zikhron Yaakov and Pardes Hana-Karkur'
 }
 
 let harish = {
-  id: "2014",
-  tite: "Harish and Wadi Ara"
+  id: '2107',
+  tite: 'Harish and Wadi Ara'
 }
 
 let north =
   {
     id: '1002',
     title: 'North',
-    options: [golanHeightsandGalilee, tiberias, beitShean, afula, jezreelValley, krayot, haifa, zikhronYaakov, zikhronYaakov]
+    options: [golanHeightsandGalilee, tiberias, afula, krayot, haifa, zikhronYaakov, zikhronYaakov]
   };
 
 /////////////////////////////////////////////////////
 
-let telAviv = {
-  id: '2001',
-  title: 'Tel Aviv'
+let Herzliya = {
+  id: '2201',
+  title: 'Herzliya and Ramat Hasharon'
 };
 
-let ramatGan = {
-  id: '2002',
-  title: 'Ramat Gan'
+let netenya = {
+  id: '2202',
+  title: 'Netenya and the erea'
 };
 
-let givataim = {
-  id: '2003',
-  title: 'Givataim'
+let petahTikva = {
+  id: '2203',
+  title: 'Petah Tikva'
 };
 
-let holon = {
-  id: '2004',
+let givatayim = {
+  id: '2204',
   title: 'Holon'
 };
 
-let batYam = {
-  id: '2005',
-  title: 'Bat Yam'
+let kefarSaba = {
+  id: '2205',
+  title: 'Kefar Saba'
 };
+
+let bneyBrak = {
+  id: '2206',
+  title: 'Bney Brak'
+};
+
+let holon = {
+  id: '2207',
+  title: 'Holon and Bat Yam'
+}
+
+let onoValley = {
+  id: '2208',
+  title: 'Ono Valley (Yehud)'
+}
+
+let rishonLezion = {
+  id: '2209',
+  title: 'Rishon Lezion and Ness Ziona'
+}
+
+let ramatGan = {
+  id: '2210',
+  title: 'Ramat Gan'
+}
+
+let rehovot = {
+  id: '2211',
+  title: 'Rehovot and the area'
+}
+
+let lod = {
+  id: '2212',
+  title: 'Lod, Ramla, Shoham and Modiin'
+}
 
 let center =
   {
     id: '1001',
     title: 'Center',
-    options: [telAviv, ramatGan, givataim, holon, batYam]
+    options: [Herzliya, netenya, petahTikva, givatayim, kefarSaba, bneyBrak, holon,
+      onoValley, rishonLezion, ramatGan, rehovot, lod]
   };
 
 /////////////////////////////////////////////////////
 
-let cityCenter = {
-  id: '2014',
-  title: 'City Center'
+let judeaAndSamaria = {
+  id: '2301',
+  title: 'Judea And Samaria'
 };
 
-let shilo = {
-  id: '2014',
-  title: 'Shilo'
-};
-
-let gilo = {
-  id: '2014',
-  title: 'Gilo'
+let jerusalemAndBeitShemesh = {
+  id: '2302',
+  title: 'Jerusalem and Beit Shemesh'
 };
 
 let jerusalem =
   {
     id: '1004',
     title: 'Jerusalem',
-    options: [cityCenter, shilo, gilo]
+    options: [judeaAndSamaria, jerusalemAndBeitShemesh]
   };
-
 
 /////////////////////////////////////////////////////
 
+let eilat = {
+  id: '2401',
+  title: 'Eilat'
+};
+
 let beerSheva = {
-  id: '2011',
+  id: '2402',
   title: 'Beer Sheva'
 };
 
-let mizpeRamon = {
-  id: '20012',
-  title: 'Mizpe Ramon'
+let kiryatGat = {
+  id: '2403',
+  title: 'Kiryat Gat and the area'
 };
 
-let elat = {
-  id: '2013',
-  title: 'Elat'
-};
-
-let arad = {
-  id: '2014',
-  title: 'Arad'
+let ashdod = {
+  id: '2404',
+  title: 'Ashdod and the area'
 };
 
 let south =
   {
     id: '1003',
     title: 'South',
-    options: [beerSheva, mizpeRamon, elat, arad]
+    options: [eilat, beerSheva, kiryatGat, ashdod]
+  };
+
+/////////////////////////////////////////////////////
+
+let telAvivNorth = {
+  id: '2501',
+  title: 'Tel Aviv North'
+};
+
+let telAvivCenter = {
+  id: '2502',
+  title: 'Tel Aviv Center'
+};
+
+let telAvivSouth = {
+  id: '2503',
+  title: 'Tel Aviv South'
+};
+
+let telAviv =
+  {
+    id: '1004',
+    title: 'Tel Aviv',
+    options: [telAvivNorth, telAvivCenter, telAvivSouth]
   };
 
 /////////////////////////////////////////////////////
@@ -145,5 +190,5 @@ export default
   {
     id: '0001',
     title: 'Region',
-    options: [center, north, south, jerusalem]
+    options: [telAviv, center, north, south, jerusalem]
   };
