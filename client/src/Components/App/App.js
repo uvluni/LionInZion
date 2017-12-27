@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PreFilter from '../PreFilter/PreFilter';
-import preFilterOptions from './preFilterOptions';
+import preFilterLocationOptions from './preFilterLocationOptions';
+import preFilterUrgencyOptions from './preFilterUrgencyOptions';
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends Component {
@@ -16,7 +18,6 @@ class App extends Component {
   addPreFilter(previousFilter) {
     let previousFilters = this.state.previousFilters;
     previousFilters.push(previousFilter);
-    console.log(previousFilters);
     this.setState({
       previousFilters: previousFilters
     })
@@ -27,7 +28,10 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <PreFilter preFilterOptions={preFilterOptions} addPreFilter={this.addPreFilter} />
+        <PreFilter
+          preFilterLocationOptions={preFilterLocationOptions}
+          preFilterUrgencyOptions={preFilterUrgencyOptions}
+          addPreFilter={this.addPreFilter} />
       </MuiThemeProvider>
     );
   }

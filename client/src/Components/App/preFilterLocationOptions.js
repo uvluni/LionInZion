@@ -29,7 +29,9 @@ let center =
     title: 'Center',
     options: [telAviv, ramatGan, givataim, holon, batYam]
   };
+
 /////////////////////////////////////////////////////
+
 let ramamtHagolan = {
   id: '2006',
   title: 'Ramat Hagolan'
@@ -45,12 +47,12 @@ let kiryatShmona = {
   title: 'Kiryat Shmona'
 };
 
-let Haifa = {
+let haifa = {
   id: '2009',
   title: 'Hifa'
 };
 
-let Afula = {
+let afula = {
   id: '2010',
   title: 'Afula'
 };
@@ -59,25 +61,64 @@ let north =
   {
     id: '1002',
     title: 'North',
-    options: [ramamtHagolan, galil, kiryatShmona, Haifa, Afula]
+    options: [ramamtHagolan, galil, kiryatShmona, haifa, afula]
   };
 
-//////////////////////////////////////////
+/////////////////////////////////////////////////////
+
+let beerSheva = {
+  id: '2011',
+  title: 'Beer Sheva'
+};
+
+let mizpeRamon = {
+  id: '20012',
+  title: 'Mizpe Ramon'
+};
+
+let elat = {
+  id: '2013',
+  title: 'Elat'
+};
+
+let arad = {
+  id: '2014',
+  title: 'Arad'
+};
+
 
 let south =
   {
     id: '1003',
     title: 'South',
-    options: [telAviv, ramatGan, givataim, holon, batYam]
+    options: [beerSheva, mizpeRamon, elat, arad]
   };
+
+/////////////////////////////////////////////////////
+
+let cityCenter = {
+  id: '2014',
+  title: 'City Center'
+};
+
+let shilo = {
+  id: '2014',
+  title: 'Shilo'
+};
+
+let gilo = {
+  id: '2014',
+  title: 'Gilo'
+};
 
 let jerusalem =
   {
     id: '1004',
     title: 'Jerusalem',
-    options: [telAviv, ramatGan, givataim, holon, batYam]
+    options: [cityCenter, shilo, gilo]
   };
 
+/////////////////////////////////////////////////////
 
 export default
   {
