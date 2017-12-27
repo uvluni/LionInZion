@@ -1,32 +1,58 @@
 import React, { Component } from 'react';
-import Questions from '../Questions/Questions';
+import GeneralQuestions from '../GeneralQuestions/GeneralQuestions';
+import RegionQuestion from '../RegionQuestion/RegionQuestion';
 
 import style from './PreFilter.css';
 
 class PreFilter extends Component {
   constructor({ preFilterOptions, preFilterSelections }) {
     super();
+    this.regionQuestions = preFilterOptions.options.map(option => option.title);
+
     this.preFilterOptions = preFilterOptions;
-    console.log(this.preFilterOptions);
-    // Use set state
-    // Update the questions shown accordingly
-    // Update on the state the selected filters
+    this.currentQuestion = 1;
+    this.state = {
+      currentQuestion: 1,
+      lastAnswer: 1,
+      cityQuestions: []
+    };
+    this.handleRegionClick = this.handleRegionClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(where) {
-    console.log(where);
-    console.log(this.preFilterOptions);
-    // this.setState = {preFilterOptions: this.preFilterOptions[where]}
+  handleRegionClick(index) {
+    console.log(index);
+
+    // let cityQuestions = this.preFilterOptions.options[this.state.lastAnswer].options.map(option => option.title);
+    console.log("this.preFilterOptions.options", this.preFilterOptions.options);
+
+
+    this.setState({
+      currentQuestion: 2,
+      lastAnswer: index,
+    });
+  }
+
+  handleClick(index) {
+    console.log(index);
+    this.setState({
+      currentQuestion: 2,
+      lastAnswer: index
+    });
   }
 
   render() {
 
-    console.log("ccc", this.preFilterOptions.options);
-    const questions = this.preFilterOptions.options.map(option => option.title)
+    let cityQuestions = this.preFilterOptions.options[this.state.lastAnswer].options.map(option => option.title);
+
+    let showRegionQuestion = this.state.currentQuestion === 1 ? true : false;
+    let showCityQuestion = this.state.currentQuestion === 2 ? true : false;
 
     return (
       <div>
-        <Questions questions={questions} handleClick={this.handleClick} />
+        {showRegionQuestion && <RegionQuestion questions={this.regionQuestions} handleClick={this.handleRegionClick} />}
+        {showCityQuestion && <GeneralQuestions questions={cityQuestions} handleClick={this.handleClick} />}
+
       </div>
     );
   }
