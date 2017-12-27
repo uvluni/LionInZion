@@ -1,3 +1,58 @@
+
+let golanHeightsandGalilee = {
+  id: '2006',
+  title: 'Golan Heights and Galilee'
+};
+
+let tiberias = {
+  id: '2007',
+  title: 'Tiberias'
+};
+
+let beitShean = {
+  id: '2008',
+  title: 'Beit Shean and the area'
+};
+
+let afula = {
+  id: '2009',
+  title: 'Afula'
+};
+
+let jezreelValley = {
+  id: '2010',
+  title: 'Jezreel Valley'
+};
+
+let krayot = {
+  id: '2011',
+  title: "Krayot"
+}
+
+let haifa = {
+  id: "2012",
+  title: "Haifa"
+}
+
+let zikhronYaakov = {
+  id: "2013",
+  title: "Zikhron Yaakov and Pardes Hana-Karkur"
+}
+
+let harish = {
+  id: "2014",
+  tite: "Harish and Wadi Ara"
+}
+
+let north =
+  {
+    id: '1002',
+    title: 'North',
+    options: [golanHeightsandGalilee, tiberias, beitShean, afula, jezreelValley, krayot, haifa, zikhronYaakov, zikhronYaakov]
+  };
+
+/////////////////////////////////////////////////////
+
 let telAviv = {
   id: '2001',
   title: 'Tel Aviv'
@@ -32,37 +87,28 @@ let center =
 
 /////////////////////////////////////////////////////
 
-let ramamtHagolan = {
-  id: '2006',
-  title: 'Ramat Hagolan'
+let cityCenter = {
+  id: '2014',
+  title: 'City Center'
 };
 
-let galil = {
-  id: '2007',
-  title: 'Galil'
+let shilo = {
+  id: '2014',
+  title: 'Shilo'
 };
 
-let kiryatShmona = {
-  id: '2008',
-  title: 'Kiryat Shmona'
+let gilo = {
+  id: '2014',
+  title: 'Gilo'
 };
 
-let haifa = {
-  id: '2009',
-  title: 'Hifa'
-};
-
-let afula = {
-  id: '2010',
-  title: 'Afula'
-};
-
-let north =
+let jerusalem =
   {
-    id: '1002',
-    title: 'North',
-    options: [ramamtHagolan, galil, kiryatShmona, haifa, afula]
+    id: '1004',
+    title: 'Jerusalem',
+    options: [cityCenter, shilo, gilo]
   };
+
 
 /////////////////////////////////////////////////////
 
@@ -86,36 +132,11 @@ let arad = {
   title: 'Arad'
 };
 
-
 let south =
   {
     id: '1003',
     title: 'South',
     options: [beerSheva, mizpeRamon, elat, arad]
-  };
-
-/////////////////////////////////////////////////////
-
-let cityCenter = {
-  id: '2014',
-  title: 'City Center'
-};
-
-let shilo = {
-  id: '2014',
-  title: 'Shilo'
-};
-
-let gilo = {
-  id: '2014',
-  title: 'Gilo'
-};
-
-let jerusalem =
-  {
-    id: '1004',
-    title: 'Jerusalem',
-    options: [cityCenter, shilo, gilo]
   };
 
 /////////////////////////////////////////////////////
