@@ -57,7 +57,7 @@ let Afula = {
 
 let north =
   {
-    id: '1001',
+    id: '1002',
     title: 'North',
     options: [ramamtHagolan, galil, kiryatShmona, Haifa, Afula]
   };
@@ -66,14 +66,14 @@ let north =
 
 let south =
   {
-    id: '1001',
+    id: '1003',
     title: 'South',
     options: [telAviv, ramatGan, givataim, holon, batYam]
   };
 
 let jerusalem =
   {
-    id: '1001',
+    id: '1004',
     title: 'Jerusalem',
     options: [telAviv, ramatGan, givataim, holon, batYam]
   };

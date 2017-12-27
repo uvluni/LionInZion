@@ -6,13 +6,28 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 class App extends Component {
   constructor() {
     super();
+    this.state = {
+      previousFilters: []
+    }
+    this.addPreFilter = this.addPreFilter.bind(this);
+
+  }
+
+  addPreFilter(previousFilter) {
+    let previousFilters = this.state.previousFilters;
+    previousFilters.push(previousFilter);
+    console.log(previousFilters);
+    this.setState({
+      previousFilters: previousFilters
+    })
+    console.log(this.state.previousFilters);
+
   }
 
   render() {
-    let preFilterSelections = [];
     return (
       <MuiThemeProvider>
-        <PreFilter preFilterOptions={preFilterOptions} preFilterSelections={preFilterSelections} />
+        <PreFilter preFilterOptions={preFilterOptions} addPreFilter={this.addPreFilter} />
       </MuiThemeProvider>
     );
   }
