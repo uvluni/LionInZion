@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PreFilter from '../PreFilter/PreFilter';
 import Results from '../Results/Results';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Caru from '../Caru/Caru'
 
 import preFilterLocationOptions from '../Data/preFilterLocationOptions';
 import preFilterUrgencyOptions from '../Data/preFilterUrgencyOptions';
-
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import items from '../Data/items';
 
 class App extends Component {
   constructor() {
@@ -37,13 +38,14 @@ class App extends Component {
   render() {
     return (
       <div>
-        <PreFilter
+        <Caru />
+        {/* <PreFilter
           preFilterLocationOptions={preFilterLocationOptions}
           preFilterUrgencyOptions={preFilterUrgencyOptions}
           addPreFilter={this.addPreFilter}
           preFilterDone={this.preFilterDone}
           finishPreFilter={this.finishPreFilter} />
-        {this.state.finishedPreFilter && <Results results={"First result"} />}
+        {this.state.finishedPreFilter && <Results results={items} />} */}
       </div>
     );
   }
