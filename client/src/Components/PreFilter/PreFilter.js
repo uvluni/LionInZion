@@ -1,32 +1,73 @@
 import React, { Component } from 'react';
-import Questions from '../Questions/Questions';
+import GeneralQuestions from '../GeneralQuestions/GeneralQuestions';
+import RegionQuestion from '../RegionQuestion/RegionQuestion';
+import UrgencyQuestions from '../UrgencyQuestions/UrgencyQuestions';
+
 
 import style from './PreFilter.css';
 
 class PreFilter extends Component {
-  constructor({ preFilterOptions, preFilterSelections }) {
+  constructor({ preFilterLocationOptions, preFilterUrgencyOptions, addPreFilter }) {
     super();
-    this.preFilterOptions = preFilterOptions;
-    console.log(this.preFilterOptions);
-    // Use set state
-    // Update the questions shown accordingly
-    // Update on the state the selected filters
+    this.preFilterLocationOptions = preFilterLocationOptions;
+    this.preFilterUrgencyOptions = preFilterUrgencyOptions;
+
+    this.addPreFilter = addPreFilter;
+
+    this.currentQuestion = 1;
+    this.state = {
+      currentQuestion: 1,
+      lastAnswer: 1,
+      regionAnswer: 0,
+      cityQuestions: []
+    };
+    this.handleRegionClick = this.handleRegionClick.bind(this);
+    this.handleCityClick = this.handleCityClick.bind(this);
+    this.handleUrgencyClick = this.handleUrgencyClick.bind(this);
   }
 
-  handleClick(where) {
-    console.log(where);
-    console.log(this.preFilterOptions);
-    // this.setState = {preFilterOptions: this.preFilterOptions[where]}
+  handleRegionClick(index) {
+    this.setState({
+      currentQuestion: 2,
+      regionAnswer: index
+    });
+  }
+
+  handleCityClick(index) {
+    this.addPreFilter(this.preFilterLocationOptions.options[this.state.lastAnswer].options[index]);
+    this.setState({
+      currentQuestion: 3,
+      lastAnswer: index
+    });
+  }
+
+  handleUrgencyClick(index) {
+
+    this.addPreFilter(this.preFilterUrgencyOptions.options[index]);
+    this.setState({
+      currentQuestion: 4,
+      lastAnswer: index
+    });
   }
 
   render() {
 
-    console.log("ccc", this.preFilterOptions.options);
-    const questions = this.preFilterOptions.options.map(option => option.title)
+    // Digests questions text
+    let regionQuestions = this.preFilterLocationOptions.options.map(option => option.title);
+    let cityQuestions = this.preFilterLocationOptions.options[this.state.regionAnswer].options.map(option => option.title);
+    let urgencyQuestions = this.preFilterUrgencyOptions.options.map(option => option.title);
+
+    // Controls which question is shown
+    let showRegionQuestion = this.state.currentQuestion === 1 ? true : false;
+    let showCityQuestion = this.state.currentQuestion === 2 ? true : false;
+    let showUrgencyQuestion = this.state.currentQuestion === 3 ? true : false;
 
     return (
       <div>
-        <Questions questions={questions} handleClick={this.handleClick} />
+        {showRegionQuestion && <RegionQuestion questions={regionQuestions} handleClick={this.handleRegionClick} />}
+        {showCityQuestion && <GeneralQuestions questions={cityQuestions} handleClick={this.handleCityClick} />}
+        {showUrgencyQuestion && <UrgencyQuestions questions={urgencyQuestions} handleClick={this.handleUrgencyClick} />}
+
       </div>
     );
   }
