@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PreFilter from '../PreFilter/PreFilter';
-import preFilterLocationOptions from './preFilterLocationOptions';
-import preFilterUrgencyOptions from './preFilterUrgencyOptions';
+import Results from '../Results/Results';
+
+import preFilterLocationOptions from '../Data/preFilterLocationOptions';
+import preFilterUrgencyOptions from '../Data/preFilterUrgencyOptions';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -9,9 +11,11 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      previousFilters: []
+      previousFilters: [],
+      finishedPreFilter: false
     }
     this.addPreFilter = this.addPreFilter.bind(this);
+    this.preFilterDone = this.preFilterDone.bind(this);
 
   }
 
@@ -22,7 +26,12 @@ class App extends Component {
       previousFilters: previousFilters
     })
     console.log(this.state.previousFilters);
+  }
 
+  preFilterDone() {
+    console.log("preFilterDone");
+    this.setState({ finishedPreFilter: true })
+    // Make api call to get data
   }
 
   render() {
@@ -31,7 +40,10 @@ class App extends Component {
         <PreFilter
           preFilterLocationOptions={preFilterLocationOptions}
           preFilterUrgencyOptions={preFilterUrgencyOptions}
-          addPreFilter={this.addPreFilter} />
+          addPreFilter={this.addPreFilter}
+          preFilterDone={this.preFilterDone}
+          finishPreFilter={this.finishPreFilter} />
+        {this.state.finishedPreFilter && <Results results={"First result"} />}
       </MuiThemeProvider>
     );
   }

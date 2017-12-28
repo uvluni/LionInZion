@@ -3,24 +3,23 @@ import GeneralQuestions from '../GeneralQuestions/GeneralQuestions';
 import RegionQuestion from '../RegionQuestion/RegionQuestion';
 import UrgencyQuestions from '../UrgencyQuestions/UrgencyQuestions';
 
-
 import style from './PreFilter.css';
 
 class PreFilter extends Component {
-  constructor({ preFilterLocationOptions, preFilterUrgencyOptions, addPreFilter }) {
+  constructor({ preFilterLocationOptions, preFilterUrgencyOptions, addPreFilter, preFilterDone }) {
     super();
     this.preFilterLocationOptions = preFilterLocationOptions;
     this.preFilterUrgencyOptions = preFilterUrgencyOptions;
-
     this.addPreFilter = addPreFilter;
+    this.preFilterDone = preFilterDone;
 
-    this.currentQuestion = 1;
     this.state = {
       currentQuestion: 1,
       lastAnswer: 1,
       regionAnswer: 0,
       cityQuestions: []
     };
+
     this.handleRegionClick = this.handleRegionClick.bind(this);
     this.handleCityClick = this.handleCityClick.bind(this);
     this.handleUrgencyClick = this.handleUrgencyClick.bind(this);
@@ -42,8 +41,8 @@ class PreFilter extends Component {
   }
 
   handleUrgencyClick(index) {
-
     this.addPreFilter(this.preFilterUrgencyOptions.options[index]);
+    this.preFilterDone();
     this.setState({
       currentQuestion: 4,
       lastAnswer: index
