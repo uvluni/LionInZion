@@ -39,7 +39,7 @@ let north =
   {
     id: '1002',
     title: 'North',
-    options: [golanHeightsandGalilee, tiberias, afula, krayot, haifa, zikhronYaakov, zikhronYaakov]
+    options: [golanHeightsandGalilee, tiberias, afula, krayot, haifa, zikhronYaakov, zikhronYaakov, harish]
   };
 
 /////////////////////////////////////////////////////

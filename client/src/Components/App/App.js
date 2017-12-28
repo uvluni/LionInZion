@@ -36,7 +36,7 @@ class App extends Component {
 
   render() {
     return (
-      <MuiThemeProvider>
+      <div>
         <PreFilter
           preFilterLocationOptions={preFilterLocationOptions}
           preFilterUrgencyOptions={preFilterUrgencyOptions}
@@ -44,7 +44,7 @@ class App extends Component {
           preFilterDone={this.preFilterDone}
           finishPreFilter={this.finishPreFilter} />
         {this.state.finishedPreFilter && <Results results={"First result"} />}
-      </MuiThemeProvider>
+      </div>
     );
   }
 }
