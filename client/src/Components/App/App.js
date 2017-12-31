@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PreFilter from '../PreFilter/PreFilter';
 import Results from '../Results/Results';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-
 import preFilterLocationOptions from '../Data/preFilterLocationOptions';
 import preFilterUrgencyOptions from '../Data/preFilterUrgencyOptions';
 import items from '../Data/items';
@@ -29,7 +28,6 @@ class App extends Component {
   }
 
   preFilterDone() {
-    console.log("preFilterDone");
     this.setState({ finishedPreFilter: true })
     // Make api call to get data
   }
