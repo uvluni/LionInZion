@@ -13,8 +13,9 @@ class PreFilter extends Component {
   }
 
   render() {
+
     return (
-      <Carousel showThumbs={false} showIndicators={false}>
+      <Carousel showThumbs={false} showIndicators={false} showArrows={true}>
         {this.renderedItems}
       </Carousel>
     );

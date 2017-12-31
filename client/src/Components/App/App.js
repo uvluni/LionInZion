@@ -29,7 +29,6 @@ class App extends Component {
 
   preFilterDone() {
     this.setState({ finishedPreFilter: true })
-    // Make api call to get data
   }
 
   render() {
