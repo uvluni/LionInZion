@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PreFilter from '../PreFilter/PreFilter';
 import Results from '../Results/Results';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import Caru from '../Caru/Caru'
 
 import preFilterLocationOptions from '../Data/preFilterLocationOptions';
 import preFilterUrgencyOptions from '../Data/preFilterUrgencyOptions';
@@ -26,7 +25,7 @@ class App extends Component {
     this.setState({
       previousFilters: previousFilters
     })
-    console.log(this.state.previousFilters);
+    // console.log(this.state.previousFilters);
   }
 
   preFilterDone() {
@@ -38,14 +37,13 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Caru />
-        {/* <PreFilter
+        <PreFilter
           preFilterLocationOptions={preFilterLocationOptions}
           preFilterUrgencyOptions={preFilterUrgencyOptions}
           addPreFilter={this.addPreFilter}
           preFilterDone={this.preFilterDone}
           finishPreFilter={this.finishPreFilter} />
-        {this.state.finishedPreFilter && <Results results={items} />} */}
+        {this.state.finishedPreFilter && <Results items={items} />}
       </div>
     );
   }
