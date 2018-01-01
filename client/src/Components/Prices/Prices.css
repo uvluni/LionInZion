@@ -1,0 +1,7 @@
+.pricesList {
+  display: flex;
+}
+
+.pricesList > * {
+  flex: 1 1 auto;
+}
