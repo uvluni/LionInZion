@@ -8,9 +8,8 @@ const passportJwt = passport.authenticate('jwt', { session: false });
 const UsersController = require('../../controllers/users');
 const { validateBody, schemas, isAuthorized } = require('../../helpers/routehelpers.js');
 
-router.route('/').get(UsersController.getUsers).put(() => {}).delete(() => {});
+router.route('/').get(UsersController.getUsers).put(() => { }).delete(() => { });
 
-// router.route('/signup').post(UsersController.signUp);
 router.route('/signup').post(validateBody(schemas.authSchema), UsersController.signUp);
 
 router.route('/signin').post(passportSignIn, UsersController.signIn);
@@ -21,7 +20,7 @@ router
     .route('/:userId')
     .get(UsersController.getUser)
     .post(passportJwt, isAuthorized, UsersController.getUser)
-    .put(() => {})
-    .delete(() => {});
+    .put(() => { })
+    .delete(() => { });
 
 module.exports = router;
