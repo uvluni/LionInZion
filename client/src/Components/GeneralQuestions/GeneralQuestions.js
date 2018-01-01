@@ -2,7 +2,7 @@ import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 
 const style = {
-  margin: 5,
+  margin: 5
 };
 
 const GeneralQuestion = ({ questions, handleClick }) => {

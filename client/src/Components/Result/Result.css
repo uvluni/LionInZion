@@ -1,0 +1,27 @@
+.wrapper {
+	background: white;
+	text-align: left;
+	height: 100%;
+}
+.title {
+	text-align: center;
+	padding: 5px;
+}
+
+.seller span{
+	color: blue;
+}
+
+.contentWrapper {
+	margin: 8px;
+	font-size: 1.1em;
+}
+
+.contentWrapper>*{
+	margin-bottom: 5px;
+	/* font-size: 1.1em; */
+}
+
+.ratingWrapper {
+	display: flex;	
+}
