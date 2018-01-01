@@ -16,7 +16,7 @@ const Result = ({ item }) => {
           ({item.seller.reviews} reviews)
         </div>
         <h4>1: 120  | 3: 350  | 5: 450  | 10: 850</h4>
-        <p>Details: {item.text}</p>
+        <p>Details: {item.generalDesc}</p>
       </div >
     </div >
   );

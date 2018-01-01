@@ -4,7 +4,8 @@ export default [
     id: '0000001',
     imgUrl: 'https://img.sensiseeds.com/en/feminized-seeds/whitelabel/purple-haze-feminised-photo.jpg',
     title: 'Best Sativa',
-    text: 'The best Sativa you will find, high thc!',
+    generalDesc: 'The best Sativa you will find, high thc!',
+    type: "Sativa",
     seller: {
       user: '@dubiking',
       rating: 4,
@@ -21,7 +22,8 @@ export default [
     id: '0000002',
     imgUrl: 'https://img.sensiseeds.com/de/feminisierte-samen/whitelabel/super-skunk-feminisiert-xl.jpg',
     title: 'High hi',
-    text: 'Hydro grown, good vibes guaranteed',
+    generalDesc: 'Hydro grown, good vibes guaranteed',
+    type: "Sativa",
     seller: {
       user: '@balbala',
       rating: 4.5,
@@ -36,8 +38,9 @@ export default [
   {
     id: '0000003',
     imgUrl: 'http://www.cannapedia.cz/sites/default/files/california-indica1.jpg',
-    title: 'Indian Kush',
-    text: 'Slow down your life, mellow and sweet taste',
+    title: 'Morocco loco',
+    generalDesc: 'Slow down your life, mellow and sweet taste',
+    type: "Indica",
     seller: {
       user: '@kululush',
       rating: 5,
