@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const LocationSchema = new Schema({
+const ItemSchema = new Schema({
     title: String,
     type: String,
     generalDesc: String,
@@ -45,6 +45,6 @@ const LocationSchema = new Schema({
     }
 });
 
-const location = mongoose.model('location', LocationSchema);
+const item = mongoose.model('item', ItemSchema);
 
-module.exports = location;
+module.exports = item;

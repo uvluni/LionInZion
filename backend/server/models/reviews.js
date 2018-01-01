@@ -11,9 +11,9 @@ const ReviewSchema = new Schema({
         ref: 'user',
         required: true
     },
-    location: {
+    item: {
         type: Schema.Types.ObjectId,
-        ref: 'location',
+        ref: 'item',
         required: true
     }
 });

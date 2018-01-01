@@ -22,15 +22,15 @@ const UserSchema = new Schema({
             ref: 'review'
         }
     ],
-    locations: [
+    items: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'location'
+            ref: 'item'
         }
     ]
 });
 
-UserSchema.pre('save', async function(next) {
+UserSchema.pre('save', async function (next) {
     try {
         const salt = await bcrypt.genSalt(10);
         this.password = await bcrypt.hash(this.password, salt);
@@ -40,7 +40,7 @@ UserSchema.pre('save', async function(next) {
     }
 });
 
-UserSchema.methods.isValidPassword = async function(newPassword) {
+UserSchema.methods.isValidPassword = async function (newPassword) {
     try {
         return await bcrypt.compare(newPassword, this.password);
     } catch (error) {
