@@ -4,7 +4,11 @@ const morgan = require('morgan');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/cinema', { useMongoClient: true });
+if (process.env.NODE_ENV === 'test') {
+    mongoose.connect('mongodb://localhost/airbnb-test', { useMongoClient: true });
+} else {
+    mongoose.connect('mongodb://localhost/airbnb', { useMongoClient: true });
+}
 
 // Initialize Application
 const app = express();
@@ -15,6 +19,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Routes
-app.use('/api/movies', require('./routes/api/movies'));
+app.use('/api/locations', require('./routes/api/locations'));
+app.use('/api/users', require('./routes/api/users'));
+app.use('/api/reviews', require('./routes/api/reviews'));
 
 module.exports = app;
