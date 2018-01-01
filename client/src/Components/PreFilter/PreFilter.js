@@ -3,8 +3,6 @@ import GeneralQuestions from '../GeneralQuestions/GeneralQuestions';
 import RegionQuestion from '../RegionQuestion/RegionQuestion';
 import UrgencyQuestions from '../UrgencyQuestions/UrgencyQuestions';
 
-import style from './PreFilter.css';
-
 class PreFilter extends Component {
   constructor({ preFilterLocationOptions, preFilterUrgencyOptions, addPreFilter, preFilterDone }) {
     super();
