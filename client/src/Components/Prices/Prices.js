@@ -3,7 +3,7 @@ import style from './Prices.css';
 
 const Prices = ({ prices }) => {
   let pricesList = prices.map((element) => {
-    let price = <p><strong>{element.amount}</strong>: {element.total}</p>
+    let price = <p key={element.amount}><strong>{element.amount}</strong>: {element.total}</p>
     return price;
   }
   );
