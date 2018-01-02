@@ -12,8 +12,8 @@ module.exports = {
     getItems: async (req, res) => {
         try {
             const items = await Items.find({}, '-__v').populate([
-                { path: 'userId' },
-                { path: 'reviews', populate: { path: 'userId' } }
+                { path: 'userId', populate: { path: 'receivedReviews' } }
+                // { path: 'reviews', populate: { path: 'userId' } }
             ]);
             res.status(200).json(items);
         } catch (error) {
