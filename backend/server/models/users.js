@@ -22,6 +22,12 @@ const UserSchema = new Schema({
             ref: 'review'
         }
     ],
+    receivedReviews: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'review'
+        }
+    ],
     items: [
         {
             type: Schema.Types.ObjectId,
