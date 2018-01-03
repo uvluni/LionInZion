@@ -1,6 +1,6 @@
 const Reviews = require('../models/reviews');
-const Items = require('../models/items');
-// const Users = require('../models/users');
+// const Items = require('../models/items');
+const Users = require('../models/users');
 
 /*
 1. getReviews     GET/reviews
@@ -11,55 +11,54 @@ const Items = require('../models/items');
 */
 
 module.exports = {
-    getReviews: async (req, res) => {
-        try {
-            const reviews = await Reviews.find({}, '-__v').populate('item').populate('userId');
-            res.status(200).json(reviews);
-        } catch (error) {
-            res.send(error);
-        }
-    },
+	getReviews: async (req, res) => {
+		try {
+			const reviews = await Reviews.find({}, '-__v').populate('item').populate('userId');
+			res.status(200).json(reviews);
+		} catch (error) {
+			res.send(error);
+		}
+	},
 
-    getReview: async (req, res) => {
-        try {
-            const review = await Reviews.findById({ _id: req.params.reviewId }, '-__v');
-            await res.status(200).json(review);
-        } catch (error) {
-            res.send(error);
-        }
-    },
+	getReview: async (req, res) => {
+		try {
+			const review = await Reviews.findById({ _id: req.params.reviewId }, '-__v');
+			await res.status(200).json(review);
+		} catch (error) {
+			res.send(error);
+		}
+	},
 
-    addReview: async (req, res) => {
-        if (!req.body.userId) {
-            return res.status(200).json({ message: 'User id is mandatory' });
-        }
+	addReview: async (req, res) => {
+		if (!req.body.userId) {
+			return res.status(200).json({ message: 'User id is mandatory' });
+		}
 
-        if (!req.body.item) {
-            return res.status(200).json({ message: 'Item id is mandatory' });
-        }
+		const newReview = new Reviews(req.body);
 
-        const newReview = new Reviews(req.body);
-        ///////////////
-        try {
-            const review = await newReview.save(); // wait for review to be saved
-            const item = await Items.findOne({ _id: req.body.item }); // find the item
-            // const user = await Users.findOne({ _id: req.body.userId }); // find the user //
-            item.reviews.push(review._id); // push review into item array
-            // user.reviews.push(review._id); // push review into user array //
-            await item.save(); // no need to wait for the save here as we dont use it after save
+		console.log(newReview);
 
-            // await user.save(); // no need to wait for the save here as we dont use it after save //
+		try {
+			const review = await newReview.save(); // wait for review to be saved
+			const user = await Users.findOne({ _id: req.body.userId }); // find the user
+			const reviewee = await Users.findOne({ _id: req.body.reviewee }); // find the reviewee
 
-            res.status(200).json({ review, message: 'Review added Successfully' });
-        } catch (error) {
-            throw new Error(error);
-        }
-        //////////////////////////
-        // try {
-        //     const review = await newReview.save();
-        //     res.status(200).json({ review, message: 'Review added Successfully' });
-        // } catch (error) {
-        //     res.send(error);
-        // }
-    }
+			user.reviews.push(review._id); // push review into user array
+			reviewee.receivedReviews.push(review._id); // push receivedReview into user array
+			await user.save(); // no need to wait for the save here as we dont use it after save
+			await reviewee.save(); // no need to wait for the save here as we dont use it after save
+
+
+			res.status(200).json({ review, message: 'Review added Successfully' });
+		} catch (error) {
+			throw new Error(error);
+		}
+		//////////////////////////
+		// try {
+		//     const review = await newReview.save();
+		//     res.status(200).json({ review, message: 'Review added Successfully' });
+		// } catch (error) {
+		//     res.send(error);
+		// }
+	}
 };

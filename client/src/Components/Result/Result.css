@@ -23,5 +23,10 @@
 }
 
 .ratingWrapper {
-	display: flex;	
+	display: flex;
+	float: right;	
+}
+
+.stars{
+	padding-right: 5px;
 }

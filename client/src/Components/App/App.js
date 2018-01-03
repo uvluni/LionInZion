@@ -28,7 +28,7 @@ class App extends Component {
   async componentWillMount() {
     let items = await this.api.getItems();
     this.setState({ items })
-    console.log(this.state.items);
+    // console.log(this.state.items);
   }
 
   addPreFilter(previousFilter) {
