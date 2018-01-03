@@ -25,6 +25,7 @@ const ItemSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'user'
 	},
+	regionId: String,
 	addedDate: String,
 	lastUpdate: String
 });
