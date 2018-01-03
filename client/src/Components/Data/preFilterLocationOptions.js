@@ -32,14 +32,14 @@ let zikhronYaakov = {
 
 let harish = {
   id: '2107',
-  tite: 'Harish and Wadi Ara'
+  title: 'Harish and Wadi Ara'
 }
 
 let north =
   {
-    id: '1002',
+    id: '1003',
     title: 'North',
-    options: [golanHeightsandGalilee, tiberias, afula, krayot, haifa, zikhronYaakov, zikhronYaakov, harish]
+    options: [golanHeightsandGalilee, tiberias, afula, krayot, haifa, zikhronYaakov, harish]
   };
 
 /////////////////////////////////////////////////////
@@ -106,7 +106,7 @@ let lod = {
 
 let center =
   {
-    id: '1001',
+    id: '1002',
     title: 'Center',
     options: [Herzliya, netenya, petahTikva, givatayim, kefarSaba, bneyBrak, holon,
       onoValley, rishonLezion, ramatGan, rehovot, lod]
@@ -126,7 +126,7 @@ let jerusalemAndBeitShemesh = {
 
 let jerusalem =
   {
-    id: '1004',
+    id: '1005',
     title: 'Jerusalem',
     options: [judeaAndSamaria, jerusalemAndBeitShemesh]
   };
@@ -155,7 +155,7 @@ let ashdod = {
 
 let south =
   {
-    id: '1003',
+    id: '1004',
     title: 'South',
     options: [eilat, beerSheva, kiryatGat, ashdod]
   };
@@ -179,7 +179,7 @@ let telAvivSouth = {
 
 let telAviv =
   {
-    id: '1004',
+    id: '1001',
     title: 'Tel Aviv',
     options: [telAvivNorth, telAvivCenter, telAvivSouth]
   };

@@ -11,7 +11,6 @@ class PreFilter extends Component {
 
     this.state = {
       currentQuestion: 1,
-      lastAnswer: 1,
       regionAnswer: 0,
       cityQuestions: []
     };
@@ -28,11 +27,10 @@ class PreFilter extends Component {
   }
 
   handleCityClick(index) {
-    this.addPreFilter(this.preFilterLocationOptions.options[this.state.lastAnswer].options[index]);
+    this.addPreFilter(this.preFilterLocationOptions.options[this.state.regionAnswer].options[index]);
     this.preFilterDone();
     this.setState({
-      currentQuestion: 3,
-      lastAnswer: index
+      currentQuestion: 3
     });
   }
 

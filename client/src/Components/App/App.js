@@ -9,10 +9,7 @@ import preFilterLocationOptions from '../Data/preFilterLocationOptions';
 class App extends Component {
   constructor() {
     super();
-
     this.api = new API();
-    // this.items = [];
-
     this.state = {
       preFilters: [],
       finishedPreFilter: false,
@@ -20,12 +17,6 @@ class App extends Component {
     }
     this.addPreFilter = this.addPreFilter.bind(this);
     this.preFilterDone = this.preFilterDone.bind(this);
-
-  }
-
-  async componentWillMount() {
-    let items = await this.api.getItems();
-    this.setState({ items })
   }
 
   addPreFilter(preFilter) {
@@ -34,11 +25,12 @@ class App extends Component {
     this.setState({
       preFilters: preFilters
     })
-    console.log(this.state.preFilters);
   }
 
-  preFilterDone() {
-    this.setState({ finishedPreFilter: true })
+  async preFilterDone() {
+    let items = await this.api.getItemsByRegion(this.state.preFilters[0].id);
+    this.setState({ items })
+    this.setState({ finishedPreFilter: true });
   }
 
   render() {
@@ -47,8 +39,7 @@ class App extends Component {
         <PreFilter
           preFilterLocationOptions={preFilterLocationOptions}
           addPreFilter={this.addPreFilter}
-          preFilterDone={this.preFilterDone}
-          finishPreFilter={this.finishPreFilter} />
+          preFilterDone={this.preFilterDone} />
         {this.state.finishedPreFilter && <Results items={this.state.items} />}
       </div>
     );
