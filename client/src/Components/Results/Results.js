@@ -15,8 +15,6 @@ class PreFilter extends Component {
   render() {
     let itemsFound = !!this.renderedItems.length;
 
-    console.log(itemsFound);
-
     return (
       <div>
         {itemsFound && <Carousel showThumbs={false} showIndicators={false} showArrows={true}>
