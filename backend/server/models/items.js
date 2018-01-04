@@ -25,12 +25,7 @@ const ItemSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'user'
 	},
-	reviews: [
-		{
-			type: Schema.Types.ObjectId,
-			ref: 'review'
-		}
-	],
+	regionId: String,
 	addedDate: String,
 	lastUpdate: String
 });

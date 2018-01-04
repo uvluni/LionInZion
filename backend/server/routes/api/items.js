@@ -10,8 +10,8 @@ router
     .delete(() => { });
 
 router
-    .route('/:itemId')
-    .get(ItemsController.getItem)
+    .route('/:regionId')
+    .get(ItemsController.getItemsByRegion)
     .post(() => { })
     .put(() => { })
     .delete(() => { });

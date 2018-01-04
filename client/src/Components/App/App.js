@@ -5,43 +5,32 @@ import PreFilter from '../PreFilter/PreFilter';
 import Results from '../Results/Results';
 
 import preFilterLocationOptions from '../Data/preFilterLocationOptions';
-import preFilterUrgencyOptions from '../Data/preFilterUrgencyOptions';
-// import items from '../Data/items';
 
 class App extends Component {
   constructor() {
     super();
-
     this.api = new API();
-    // this.items = [];
-
     this.state = {
-      previousFilters: [],
+      preFilters: [],
       finishedPreFilter: false,
       items: []
     }
     this.addPreFilter = this.addPreFilter.bind(this);
     this.preFilterDone = this.preFilterDone.bind(this);
-
   }
 
-  async componentWillMount() {
-    let items = await this.api.getItems();
-    this.setState({ items })
-    // console.log(this.state.items);
-  }
-
-  addPreFilter(previousFilter) {
-    let previousFilters = this.state.previousFilters;
-    previousFilters.push(previousFilter);
+  addPreFilter(preFilter) {
+    let preFilters = this.state.preFilters;
+    preFilters.push(preFilter);
     this.setState({
-      previousFilters: previousFilters
+      preFilters: preFilters
     })
-    // console.log(this.state.previousFilters);
   }
 
-  preFilterDone() {
-    this.setState({ finishedPreFilter: true })
+  async preFilterDone() {
+    let items = await this.api.getItemsByRegion(this.state.preFilters[0].id);
+    this.setState({ items })
+    this.setState({ finishedPreFilter: true });
   }
 
   render() {
@@ -49,10 +38,8 @@ class App extends Component {
       <div>
         <PreFilter
           preFilterLocationOptions={preFilterLocationOptions}
-          preFilterUrgencyOptions={preFilterUrgencyOptions}
           addPreFilter={this.addPreFilter}
-          preFilterDone={this.preFilterDone}
-          finishPreFilter={this.finishPreFilter} />
+          preFilterDone={this.preFilterDone} />
         {this.state.finishedPreFilter && <Results items={this.state.items} />}
       </div>
     );
