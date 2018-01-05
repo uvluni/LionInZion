@@ -20,9 +20,9 @@ class PreFilter extends Component {
 
   render() {
     let itemsFound = !!this.renderedItems.length;
-    setTimeout(() => {
-      this.setState({ showProgress: false });
-    }, 2000);
+    // setTimeout(() => {
+    //   this.setState({ showProgress: false });
+    // }, 2000);
 
 
     return (
