@@ -16,14 +16,14 @@ class PreFilter extends Component {
     this.state = {
       showProgress: true
     }
-  }
-
-  render() {
-    let itemsFound = !!this.renderedItems.length;
     setTimeout(() => {
       this.setState({ showProgress: false });
     }, 2000);
 
+  }
+
+  render() {
+    let itemsFound = !!this.renderedItems.length;
 
     return (
       <div>
