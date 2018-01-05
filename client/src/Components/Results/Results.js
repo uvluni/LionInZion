@@ -16,6 +16,10 @@ class PreFilter extends Component {
     this.state = {
       showProgress: true
     }
+    setTimeout(() => {
+      this.setState({ showProgress: false });
+    }, 2000);
+
   }
 
   render() {
