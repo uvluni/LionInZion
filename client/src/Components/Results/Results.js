@@ -23,7 +23,7 @@ class PreFilter extends Component {
   }
 
   render() {
-    let itemsFound = !!this.renderedItems.length;
+    let itemsFound = !!!!this.renderedItems.length;
 
     return (
       <div>
